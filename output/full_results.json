@@ -1,0 +1,1281 @@
+{
+  "generated_at": "2026-05-26T00:56:50.401766+00:00",
+  "run_meta": {
+    "source": "/home/gnomeman4201/events.jsonl",
+    "n_events": 28306,
+    "n_nodes": 250,
+    "known_bots": []
+  },
+  "ranked_nodes": [
+    {
+      "rank": 1,
+      "node_id": "BOT0_00255",
+      "fraud_score": 0.8382,
+      "anomaly_score": 0.8566,
+      "centrality_deviation": 0.611,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 233812445.9806749,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.564577000798639,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "clustering_coeff",
+          "node_value": 0.4833759590792839,
+          "baseline_mean": 0.401741252258528,
+          "z_score": 4.183447625932555,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "pagerank",
+          "node_value": 0.003966282038343844,
+          "baseline_mean": 0.002894150717788691,
+          "z_score": 3.825308825912898,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.56, node=2.34e+08, baseline=6.33e+07); clustering_coeff is elevated (z=+4.18, node=0.483, baseline=0.402); pagerank is elevated (z=+3.83, node=0.00397, baseline=0.00289).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 2,
+      "node_id": "BOT4_00295",
+      "fraud_score": 0.8265,
+      "anomaly_score": 0.7857,
+      "centrality_deviation": 0.6916,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "pagerank",
+          "node_value": 0.004074045757607023,
+          "baseline_mean": 0.002894150717788691,
+          "z_score": 4.209804175043435,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "clustering_coeff",
+          "node_value": 0.4785165083672546,
+          "baseline_mean": 0.401741252258528,
+          "z_score": 3.9344204861743175,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.9615384615384616,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 3.393771980676531,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "pagerank is elevated (z=+4.21, node=0.00407, baseline=0.00289); clustering_coeff is elevated (z=+3.93, node=0.479, baseline=0.402); repetition_ratio is elevated (z=+3.39, node=0.962, baseline=0.225).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 3,
+      "node_id": "U00107",
+      "fraud_score": 0.763,
+      "anomaly_score": 1.0,
+      "centrality_deviation": 0.052,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "activity_rate_24h",
+          "node_value": 89.0,
+          "baseline_mean": 14.75897435897436,
+          "z_score": 20.335653296613053,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "total_events",
+          "node_value": 327.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": 14.239163659865277,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "burstiness",
+          "node_value": 0.5042926494776834,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 3.3330079832109045,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "activity_rate_24h is elevated (z=+20.34, node=89, baseline=14.8); total_events is elevated (z=+14.24, node=327, baseline=106); burstiness is elevated (z=+3.33, node=0.504, baseline=0.151).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 4,
+      "node_id": "BOT3_00289",
+      "fraud_score": 0.7426,
+      "anomaly_score": 0.8402,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "burstiness",
+          "node_value": 0.5204094303536729,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 3.4849023460430377,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.9615384615384616,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 3.393771980676531,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.038461538461538464,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3937719806765307,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "burstiness is elevated (z=+3.48, node=0.52, baseline=0.151); repetition_ratio is elevated (z=+3.39, node=0.962, baseline=0.225); target_diversity is depressed (z=-3.39, node=0.0385, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 5,
+      "node_id": "BOT2_00272",
+      "fraud_score": 0.6965,
+      "anomaly_score": 0.7378,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 219662981.86137056,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.185830665805097,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "clustering_coeff",
+          "node_value": 0.4756172839506173,
+          "baseline_mean": 0.401741252258528,
+          "z_score": 3.785846993658959,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.19, node=2.2e+08, baseline=6.33e+07); clustering_coeff is elevated (z=+3.79, node=0.476, baseline=0.402); out_degree is depressed (z=-3.38, node=5, baseline=80.5).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 6,
+      "node_id": "BOT1_00268",
+      "fraud_score": 0.685,
+      "anomaly_score": 0.6633,
+      "centrality_deviation": 0.3459,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 226605039.71689028,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.371652471346415,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.047619047619047616,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.351597713183744,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.37, node=2.27e+08, baseline=6.33e+07); out_degree is depressed (z=-3.38, node=5, baseline=80.5); target_diversity is depressed (z=-3.35, node=0.0476, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 7,
+      "node_id": "BOT3_00288",
+      "fraud_score": 0.6686,
+      "anomaly_score": 0.6759,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "burstiness",
+          "node_value": 0.5202681909762947,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 3.48357122009433,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.9615384615384616,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 3.393771980676531,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.038461538461538464,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3937719806765307,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "burstiness is elevated (z=+3.48, node=0.52, baseline=0.151); repetition_ratio is elevated (z=+3.39, node=0.962, baseline=0.225); target_diversity is depressed (z=-3.39, node=0.0385, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 8,
+      "node_id": "BOT3_00283",
+      "fraud_score": 0.6607,
+      "anomaly_score": 0.6583,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "burstiness",
+          "node_value": 0.520006318305117,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 3.481103172483721,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.9615384615384616,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 3.393771980676531,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.038461538461538464,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3937719806765307,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "burstiness is elevated (z=+3.48, node=0.52, baseline=0.151); repetition_ratio is elevated (z=+3.39, node=0.962, baseline=0.225); target_diversity is depressed (z=-3.39, node=0.0385, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 9,
+      "node_id": "BOT0_00250",
+      "fraud_score": 0.6592,
+      "anomaly_score": 0.655,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 233678875.36214644,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.5610016440357315,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "clustering_coeff",
+          "node_value": 0.4686868686868687,
+          "baseline_mean": 0.401741252258528,
+          "z_score": 3.4306913201595073,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.56, node=2.34e+08, baseline=6.33e+07); clustering_coeff is elevated (z=+3.43, node=0.469, baseline=0.402); out_degree is depressed (z=-3.38, node=5, baseline=80.5).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 10,
+      "node_id": "U00039",
+      "fraud_score": 0.6549,
+      "anomaly_score": 0.7399,
+      "centrality_deviation": 0.0879,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "activity_rate_24h",
+          "node_value": 79.0,
+          "baseline_mean": 14.75897435897436,
+          "z_score": 17.596513700813134,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "total_events",
+          "node_value": 254.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": 9.535511217515424,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "burstiness",
+          "node_value": 0.4456388076711058,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 2.7802184405957564,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "activity_rate_24h is elevated (z=+17.60, node=79, baseline=14.8); total_events is elevated (z=+9.54, node=254, baseline=106); burstiness is elevated (z=+2.78, node=0.446, baseline=0.151).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 11,
+      "node_id": "BOT4_00290",
+      "fraud_score": 0.6529,
+      "anomaly_score": 0.6409,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.9615384615384616,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 3.393771980676531,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.038461538461538464,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3937719806765307,
+          "direction": "LOW"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "repetition_ratio is elevated (z=+3.39, node=0.962, baseline=0.225); target_diversity is depressed (z=-3.39, node=0.0385, baseline=0.775); out_degree is depressed (z=-3.38, node=5, baseline=80.5).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 12,
+      "node_id": "U00023",
+      "fraud_score": 0.6506,
+      "anomaly_score": 0.505,
+      "centrality_deviation": 0.4934,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "pagerank",
+          "node_value": 0.003821764808246882,
+          "baseline_mean": 0.002894150717788691,
+          "z_score": 3.309678860452937,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "total_events",
+          "node_value": 80.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": -1.6759343300034046,
+          "direction": "LOW"
+        },
+        {
+          "feature": "activity_rate_24h",
+          "node_value": 10.0,
+          "baseline_mean": 14.75897435897436,
+          "z_score": -1.3035495102063215,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "pagerank is elevated (z=+3.31, node=0.00382, baseline=0.00289); total_events is depressed (z=-1.68, node=80, baseline=106); activity_rate_24h is depressed (z=-1.30, node=10, baseline=14.8).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 13,
+      "node_id": "BOT0_00251",
+      "fraud_score": 0.6488,
+      "anomaly_score": 0.6319,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 233606890.46659836,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.5590747855247775,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.05263157894736842,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3285128509771664,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.56, node=2.34e+08, baseline=6.33e+07); out_degree is depressed (z=-3.38, node=5, baseline=80.5); target_diversity is depressed (z=-3.33, node=0.0526, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 14,
+      "node_id": "U00139",
+      "fraud_score": 0.6466,
+      "anomaly_score": 0.7314,
+      "centrality_deviation": 0.0697,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "total_events",
+          "node_value": 315.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": 13.465960518657083,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "burstiness",
+          "node_value": 0.4711416836809195,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 3.020573082859868,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.7682539682539683,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 2.503613774795449,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "total_events is elevated (z=+13.47, node=315, baseline=106); burstiness is elevated (z=+3.02, node=0.471, baseline=0.151); repetition_ratio is elevated (z=+2.50, node=0.768, baseline=0.225).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 15,
+      "node_id": "U00166",
+      "fraud_score": 0.6405,
+      "anomaly_score": 0.7179,
+      "centrality_deviation": 0.0698,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "total_events",
+          "node_value": 186.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": 5.154026750668986,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "burstiness",
+          "node_value": 0.4138749139396744,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 2.4808561525230073,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.6935483870967742,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 2.1595624494037575,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "total_events is elevated (z=+5.15, node=186, baseline=106); burstiness is elevated (z=+2.48, node=0.414, baseline=0.151); repetition_ratio is elevated (z=+2.16, node=0.694, baseline=0.225).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 16,
+      "node_id": "BOT1_00269",
+      "fraud_score": 0.6386,
+      "anomaly_score": 0.6091,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 226509644.5874397,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.369098978482587,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        },
+        {
+          "feature": "clustering_coeff",
+          "node_value": 0.46734006734006733,
+          "baseline_mean": 0.401741252258528,
+          "z_score": 3.3616732135685194,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.37, node=2.27e+08, baseline=6.33e+07); out_degree is depressed (z=-3.38, node=5, baseline=80.5); clustering_coeff is elevated (z=+3.36, node=0.467, baseline=0.402).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 17,
+      "node_id": "U00183",
+      "fraud_score": 0.6364,
+      "anomaly_score": 0.708,
+      "centrality_deviation": 0.0712,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "activity_rate_24h",
+          "node_value": 94.0,
+          "baseline_mean": 14.75897435897436,
+          "z_score": 21.705223094513013,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "total_events",
+          "node_value": 256.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": 9.66437840771679,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "burstiness",
+          "node_value": 0.4337813010481104,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 2.668466073473802,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "activity_rate_24h is elevated (z=+21.71, node=94, baseline=14.8); total_events is elevated (z=+9.66, node=256, baseline=106); burstiness is elevated (z=+2.67, node=0.434, baseline=0.151).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 18,
+      "node_id": "BOT3_00287",
+      "fraud_score": 0.6362,
+      "anomaly_score": 0.6038,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "burstiness",
+          "node_value": 0.5202829778157609,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 3.483710580278991,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.9615384615384616,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 3.393771980676531,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.038461538461538464,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3937719806765307,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "burstiness is elevated (z=+3.48, node=0.52, baseline=0.151); repetition_ratio is elevated (z=+3.39, node=0.962, baseline=0.225); target_diversity is depressed (z=-3.39, node=0.0385, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 19,
+      "node_id": "BOT0_00256",
+      "fraud_score": 0.6345,
+      "anomaly_score": 0.6001,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 233956151.8151573,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.568423652351552,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "clustering_coeff",
+          "node_value": 0.4720496894409938,
+          "baseline_mean": 0.401741252258528,
+          "z_score": 3.603022244691038,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.57, node=2.34e+08, baseline=6.33e+07); clustering_coeff is elevated (z=+3.60, node=0.472, baseline=0.402); out_degree is depressed (z=-3.38, node=5, baseline=80.5).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 20,
+      "node_id": "BOT0_00253",
+      "fraud_score": 0.6247,
+      "anomaly_score": 0.5782,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 234020968.00571534,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.570158622270915,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.05263157894736842,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3285128509771664,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.57, node=2.34e+08, baseline=6.33e+07); out_degree is depressed (z=-3.38, node=5, baseline=80.5); target_diversity is depressed (z=-3.33, node=0.0526, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 21,
+      "node_id": "U00086",
+      "fraud_score": 0.6227,
+      "anomaly_score": 0.6775,
+      "centrality_deviation": 0.0714,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "activity_rate_24h",
+          "node_value": 49.0,
+          "baseline_mean": 14.75897435897436,
+          "z_score": 9.37909491341337,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "total_events",
+          "node_value": 201.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": 6.12053067717923,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "burstiness",
+          "node_value": 0.4232031944232602,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 2.568771551465024,
+          "direction": "HIGH"
+        }
+      ],
+      "deviation_summary": "activity_rate_24h is elevated (z=+9.38, node=49, baseline=14.8); total_events is elevated (z=+6.12, node=201, baseline=106); burstiness is elevated (z=+2.57, node=0.423, baseline=0.151).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 22,
+      "node_id": "U00050",
+      "fraud_score": 0.6222,
+      "anomaly_score": 0.6831,
+      "centrality_deviation": 0.0593,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "activity_rate_24h",
+          "node_value": 60.0,
+          "baseline_mean": 14.75897435897436,
+          "z_score": 12.392148468793284,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "total_events",
+          "node_value": 224.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": 7.602503364494937,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.33482142857142855,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -2.028907248941225,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "activity_rate_24h is elevated (z=+12.39, node=60, baseline=14.8); total_events is elevated (z=+7.60, node=224, baseline=106); target_diversity is depressed (z=-2.03, node=0.335, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 23,
+      "node_id": "BOT2_00271",
+      "fraud_score": 0.6216,
+      "anomaly_score": 0.5715,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 219085430.10850483,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.170371026639785,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "clustering_coeff",
+          "node_value": 0.47173224785165085,
+          "baseline_mean": 0.401741252258528,
+          "z_score": 3.5867546507346484,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.17, node=2.19e+08, baseline=6.33e+07); clustering_coeff is elevated (z=+3.59, node=0.472, baseline=0.402); out_degree is depressed (z=-3.38, node=5, baseline=80.5).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 24,
+      "node_id": "BOT0_00254",
+      "fraud_score": 0.6182,
+      "anomaly_score": 0.5638,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 234294870.25886604,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.577490311559823,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.05263157894736842,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3285128509771664,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.58, node=2.34e+08, baseline=6.33e+07); out_degree is depressed (z=-3.38, node=5, baseline=80.5); target_diversity is depressed (z=-3.33, node=0.0526, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 25,
+      "node_id": "BOT2_00274",
+      "fraud_score": 0.6182,
+      "anomaly_score": 0.5637,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 219748677.21859393,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.188124519635932,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.045454545454545456,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3615661764093123,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.19, node=2.2e+08, baseline=6.33e+07); out_degree is depressed (z=-3.38, node=5, baseline=80.5); target_diversity is depressed (z=-3.36, node=0.0455, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 26,
+      "node_id": "U00087",
+      "fraud_score": 0.616,
+      "anomaly_score": 0.6505,
+      "centrality_deviation": 0.093,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "total_events",
+          "node_value": 251.0,
+          "baseline_mean": 106.01025641025642,
+          "z_score": 9.342210432213374,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "burstiness",
+          "node_value": 0.4681426280324774,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 2.992308155122539,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.2908366533864542,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -2.2314760525705473,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "total_events is elevated (z=+9.34, node=251, baseline=106); burstiness is elevated (z=+2.99, node=0.468, baseline=0.151); target_diversity is depressed (z=-2.23, node=0.291, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 27,
+      "node_id": "BOT0_00259",
+      "fraud_score": 0.6155,
+      "anomaly_score": 0.5579,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 233919220.1423119,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.5674350823521905,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "clustering_coeff",
+          "node_value": 0.46888320545609546,
+          "baseline_mean": 0.401741252258528,
+          "z_score": 3.4407527832686773,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.57, node=2.34e+08, baseline=6.33e+07); clustering_coeff is elevated (z=+3.44, node=0.469, baseline=0.402); out_degree is depressed (z=-3.38, node=5, baseline=80.5).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 28,
+      "node_id": "BOT0_00258",
+      "fraud_score": 0.6081,
+      "anomaly_score": 0.5413,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "inter_event_variance",
+          "node_value": 234235290.1640886,
+          "baseline_mean": 63285862.55194426,
+          "z_score": 4.575895499039345,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "out_degree",
+          "node_value": 5.0,
+          "baseline_mean": 80.50769230769231,
+          "z_score": -3.375958623667177,
+          "direction": "LOW"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.05263157894736842,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3285128509771664,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "inter_event_variance is elevated (z=+4.58, node=2.34e+08, baseline=6.33e+07); out_degree is depressed (z=-3.38, node=5, baseline=80.5); target_diversity is depressed (z=-3.33, node=0.0526, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 29,
+      "node_id": "BOT3_00284",
+      "fraud_score": 0.6027,
+      "anomaly_score": 0.5294,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "burstiness",
+          "node_value": 0.5201348726912863,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 3.4823147473463885,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.9615384615384616,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 3.393771980676531,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.038461538461538464,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3937719806765307,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "burstiness is elevated (z=+3.48, node=0.52, baseline=0.151); repetition_ratio is elevated (z=+3.39, node=0.962, baseline=0.225); target_diversity is depressed (z=-3.39, node=0.0385, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    },
+    {
+      "rank": 30,
+      "node_id": "BOT3_00282",
+      "fraud_score": 0.5998,
+      "anomaly_score": 0.5229,
+      "centrality_deviation": 0.2579,
+      "cluster_density_anomaly": 1.0,
+      "flagged": true,
+      "cluster_id": -1,
+      "top_features": [
+        {
+          "feature": "burstiness",
+          "node_value": 0.5205172768093095,
+          "baseline_mean": 0.1506431899338814,
+          "z_score": 3.4859187567511474,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "repetition_ratio",
+          "node_value": 0.9615384615384616,
+          "baseline_mean": 0.22463181587214515,
+          "z_score": 3.393771980676531,
+          "direction": "HIGH"
+        },
+        {
+          "feature": "target_diversity",
+          "node_value": 0.038461538461538464,
+          "baseline_mean": 0.7753681841278548,
+          "z_score": -3.3937719806765307,
+          "direction": "LOW"
+        }
+      ],
+      "deviation_summary": "burstiness is elevated (z=+3.49, node=0.521, baseline=0.151); repetition_ratio is elevated (z=+3.39, node=0.962, baseline=0.225); target_diversity is depressed (z=-3.39, node=0.0385, baseline=0.775).  Node is DBSCAN outlier (no cluster).",
+      "cluster_context": {
+        "cluster_id": -1,
+        "description": "DBSCAN noise: node does not belong to any dense cluster; pattern is highly irregular relative to all neighbours."
+      }
+    }
+  ],
+  "clusters": {
+    "-1": {
+      "cluster_id": -1,
+      "is_noise_cluster": "True",
+      "size": 232,
+      "mean_fraud_score": 0.4601,
+      "max_fraud_score": 0.8382,
+      "flagged_members": 55,
+      "members": [
+        "BOT3_00283",
+        "U00063",
+        "U00038",
+        "U00010",
+        "U00108",
+        "U00045",
+        "U00157",
+        "BOT3_00288",
+        "U00175",
+        "U00014",
+        "U00130",
+        "BOT0_00259",
+        "U00179",
+        "U00137",
+        "U00162",
+        "U00027",
+        "U00182",
+        "U00186",
+        "U00131",
+        "U00020",
+        "U00196",
+        "U00023",
+        "U00040",
+        "U00008",
+        "U00032",
+        "BOT1_00263",
+        "U00057",
+        "U00035",
+        "BOT2_00279",
+        "U00101",
+        "U00164",
+        "U00091",
+        "U00105",
+        "U00169",
+        "BOT3_00289",
+        "U00086",
+        "U00048",
+        "U00123",
+        "U00171",
+        "U00061",
+        "U00087",
+        "BOT2_00272",
+        "U00055",
+        "U00068",
+        "U00158",
+        "U00149",
+        "U00133",
+        "BOT1_00267",
+        "U00134",
+        "BOT1_00261"
+      ]
+    },
+    "0": {
+      "cluster_id": 0,
+      "is_noise_cluster": "False",
+      "size": 3,
+      "mean_fraud_score": 0.3893,
+      "max_fraud_score": 0.399,
+      "flagged_members": 0,
+      "members": [
+        "BOT2_00273",
+        "BOT2_00275",
+        "BOT2_00270"
+      ]
+    },
+    "1": {
+      "cluster_id": 1,
+      "is_noise_cluster": "False",
+      "size": 4,
+      "mean_fraud_score": 0.0889,
+      "max_fraud_score": 0.0966,
+      "flagged_members": 0,
+      "members": [
+        "U00031",
+        "U00147",
+        "U00046",
+        "U00096"
+      ]
+    },
+    "2": {
+      "cluster_id": 2,
+      "is_noise_cluster": "False",
+      "size": 3,
+      "mean_fraud_score": 0.4016,
+      "max_fraud_score": 0.414,
+      "flagged_members": 0,
+      "members": [
+        "BOT1_00262",
+        "BOT1_00265",
+        "BOT1_00266"
+      ]
+    },
+    "3": {
+      "cluster_id": 3,
+      "is_noise_cluster": "False",
+      "size": 5,
+      "mean_fraud_score": 0.2896,
+      "max_fraud_score": 0.3084,
+      "flagged_members": 0,
+      "members": [
+        "BOT4_00298",
+        "BOT4_00293",
+        "BOT4_00296",
+        "BOT4_00299",
+        "BOT4_00292"
+      ]
+    },
+    "4": {
+      "cluster_id": 4,
+      "is_noise_cluster": "False",
+      "size": 3,
+      "mean_fraud_score": 0.4265,
+      "max_fraud_score": 0.444,
+      "flagged_members": 0,
+      "members": [
+        "BOT3_00280",
+        "BOT3_00281",
+        "BOT3_00286"
+      ]
+    }
+  }
+}

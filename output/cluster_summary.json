@@ -1,0 +1,130 @@
+{
+  "-1": {
+    "cluster_id": -1,
+    "is_noise_cluster": "True",
+    "size": 232,
+    "mean_fraud_score": 0.4601,
+    "max_fraud_score": 0.8382,
+    "flagged_members": 55,
+    "members": [
+      "BOT3_00283",
+      "U00063",
+      "U00038",
+      "U00010",
+      "U00108",
+      "U00045",
+      "U00157",
+      "BOT3_00288",
+      "U00175",
+      "U00014",
+      "U00130",
+      "BOT0_00259",
+      "U00179",
+      "U00137",
+      "U00162",
+      "U00027",
+      "U00182",
+      "U00186",
+      "U00131",
+      "U00020",
+      "U00196",
+      "U00023",
+      "U00040",
+      "U00008",
+      "U00032",
+      "BOT1_00263",
+      "U00057",
+      "U00035",
+      "BOT2_00279",
+      "U00101",
+      "U00164",
+      "U00091",
+      "U00105",
+      "U00169",
+      "BOT3_00289",
+      "U00086",
+      "U00048",
+      "U00123",
+      "U00171",
+      "U00061",
+      "U00087",
+      "BOT2_00272",
+      "U00055",
+      "U00068",
+      "U00158",
+      "U00149",
+      "U00133",
+      "BOT1_00267",
+      "U00134",
+      "BOT1_00261"
+    ]
+  },
+  "0": {
+    "cluster_id": 0,
+    "is_noise_cluster": "False",
+    "size": 3,
+    "mean_fraud_score": 0.3893,
+    "max_fraud_score": 0.399,
+    "flagged_members": 0,
+    "members": [
+      "BOT2_00273",
+      "BOT2_00275",
+      "BOT2_00270"
+    ]
+  },
+  "1": {
+    "cluster_id": 1,
+    "is_noise_cluster": "False",
+    "size": 4,
+    "mean_fraud_score": 0.0889,
+    "max_fraud_score": 0.0966,
+    "flagged_members": 0,
+    "members": [
+      "U00031",
+      "U00147",
+      "U00046",
+      "U00096"
+    ]
+  },
+  "2": {
+    "cluster_id": 2,
+    "is_noise_cluster": "False",
+    "size": 3,
+    "mean_fraud_score": 0.4016,
+    "max_fraud_score": 0.414,
+    "flagged_members": 0,
+    "members": [
+      "BOT1_00262",
+      "BOT1_00265",
+      "BOT1_00266"
+    ]
+  },
+  "3": {
+    "cluster_id": 3,
+    "is_noise_cluster": "False",
+    "size": 5,
+    "mean_fraud_score": 0.2896,
+    "max_fraud_score": 0.3084,
+    "flagged_members": 0,
+    "members": [
+      "BOT4_00298",
+      "BOT4_00293",
+      "BOT4_00296",
+      "BOT4_00299",
+      "BOT4_00292"
+    ]
+  },
+  "4": {
+    "cluster_id": 4,
+    "is_noise_cluster": "False",
+    "size": 3,
+    "mean_fraud_score": 0.4265,
+    "max_fraud_score": 0.444,
+    "flagged_members": 0,
+    "members": [
+      "BOT3_00280",
+      "BOT3_00281",
+      "BOT3_00286"
+    ]
+  }
+}
