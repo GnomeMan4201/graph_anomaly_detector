@@ -32,8 +32,6 @@ class OutputLayer:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-    # ── public api ────────────────────────────────────────────────────────────
-
     def write(
         self,
         score_df:     pd.DataFrame,
@@ -42,14 +40,10 @@ class OutputLayer:
         feat_df:      pd.DataFrame,
         run_meta:     Optional[Dict] = None,
     ) -> Dict[str, str]:
-        """
-        Write all output files.  Returns dict of {label: filepath}.
-        """
+        """Write all output files. Returns dict of {label: filepath}."""
         ranked       = self._build_ranked_list(score_df, explanations)
         cluster_summ = self._build_cluster_summary(result, score_df)
-        full         = self._build_full_results(
-            ranked, cluster_summ, run_meta or {}
-        )
+        full         = self._build_full_results(ranked, cluster_summ, run_meta or {})
 
         paths = {
             "ranked_nodes":    self._dump("ranked_nodes.json", ranked),
@@ -59,8 +53,6 @@ class OutputLayer:
 
         self._print_console_summary(ranked, cluster_summ)
         return paths
-
-    # ── builders ──────────────────────────────────────────────────────────────
 
     def _build_ranked_list(
         self,
@@ -79,9 +71,7 @@ class OutputLayer:
                 "fraud_score":        round(float(row["fraud_score"]), 4),
                 "anomaly_score":      round(float(row["anomaly_score"]), 4),
                 "centrality_deviation":round(float(row["centrality_deviation"]), 4),
-                "cluster_density_anomaly": round(
-                    float(row["cluster_density_anomaly"]), 4
-                ),
+                "cluster_density_anomaly": round(float(row["cluster_density_anomaly"]), 4),
                 "flagged":            bool(row["flagged"]),
                 "cluster_id":         expl.get("cluster_id"),
                 "top_features":       expl.get("top_features", []),
@@ -90,17 +80,14 @@ class OutputLayer:
             })
         return rows
 
-    @staticmethod
     def _build_cluster_summary(
+        self,
         result:   ModelResult,
         score_df: pd.DataFrame,
     ) -> Dict[str, Any]:
         summary: Dict[int, Any] = {}
         for label in sorted(result.cluster_labels.unique()):
-            members = (
-                result.cluster_labels[result.cluster_labels == label]
-                .index.tolist()
-            )
+            members = result.cluster_labels[result.cluster_labels == label].index.tolist()
             member_scores = score_df.loc[
                 score_df.index.intersection(members), "fraud_score"
             ]
@@ -113,9 +100,9 @@ class OutputLayer:
                 "max_fraud_score":    round(float(member_scores.max()), 4)
                                       if not member_scores.empty else 0.0,
                 "flagged_members":    int(
-                    (member_scores >= 0.55).sum()
+                    (member_scores >= self.cfg.flag_threshold).sum()
                 ) if not member_scores.empty else 0,
-                "members":            members[:50],   # truncate for readability
+                "members":            members[:50],
             }
         return summary
 
@@ -132,16 +119,12 @@ class OutputLayer:
             "clusters":     cluster_summ,
         }
 
-    # ── IO ────────────────────────────────────────────────────────────────────
-
     def _dump(self, filename: str, data: Any) -> str:
         path = self.output_dir / filename
         with path.open("w") as f:
             json.dump(data, f, indent=2, default=str)
         log.info("wrote %s", path)
         return str(path)
-
-    # ── console output ────────────────────────────────────────────────────────
 
     @staticmethod
     def _print_console_summary(
@@ -152,10 +135,9 @@ class OutputLayer:
         sep   = "─" * width
 
         print(f"\n{'═' * width}")
-        print(f"  GRAPH ANOMALY DETECTION — RESULTS SUMMARY")
+        print("  GRAPH ANOMALY DETECTION — RESULTS SUMMARY")
         print(f"{'═' * width}")
 
-        # Ranked node table
         n_flagged = sum(1 for r in ranked if r["flagged"])
         print(f"\n  TOP SUSPICIOUS NODES  (showing top {len(ranked)}, {n_flagged} flagged)\n")
         print(f"  {'RANK':<5} {'NODE_ID':<18} {'FRAUD':>7} {'IF_SCORE':>9} "
@@ -170,7 +152,6 @@ class OutputLayer:
                 f"{r['centrality_deviation']:>9.4f} {cid:>8}  {flag_str:>5}"
             )
 
-        # Cluster summary
         print(f"\n{sep}\n  CLUSTER SUMMARY\n{sep}")
         print(f"  {'CLUSTER':>9} {'SIZE':>6} {'MEAN_FRAUD':>11} "
               f"{'MAX_FRAUD':>10} {'FLAGGED':>8}  {'TYPE':>10}")
@@ -184,7 +165,6 @@ class OutputLayer:
                 f"{cs['flagged_members']:>8}  {kind:>10}"
             )
 
-        # Explanation preview for top-3
         print(f"\n{sep}\n  TOP-3 EXPLANATIONS\n{sep}")
         for r in ranked[:3]:
             print(f"\n  Node: {r['node_id']}  fraud_score={r['fraud_score']:.4f}")
