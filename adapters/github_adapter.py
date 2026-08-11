@@ -10,11 +10,11 @@ Two input modes
      When following lists are available, pairwise Jaccard similarity is
      computed and similarity edges are added to the graph.
 
-The Jaccard similarity graph is the primary detection surface for the
-GitHub botnet described in the DEV.to investigation:
-  canestein, hazexone, domcomit, kylehyne, jaderytm,
-  vierystein, hanyvert, mariwatts, lynewinter
-  — Jaccard ≥ 0.98 across ~29,800 following entries each.
+The Jaccard similarity graph is a generic analytical surface for detecting
+accounts whose following neighborhoods overlap unusually strongly. High
+similarity is a correlation signal, not proof of automation, coordination,
+shared ownership, or attribution; those conclusions require independent
+evidence outside this adapter.
 
 Graph schema
   nodes  = GitHub accounts
