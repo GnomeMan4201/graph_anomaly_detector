@@ -12,9 +12,7 @@
 
 Graph Anomaly Detector turns interaction records into a behavioral graph, extracts structural and social features, models anomalous nodes, scores suspicious activity, and writes explainable JSON results for downstream investigation.
 
-The repository is designed around a reproducible local pipeline rather than a hosted service. It can run against your own JSONL/CSV interaction data or generate a synthetic dataset with known coordinated clusters so the full pipeline can be exercised without external data.
-
-Core stages:
+The repository is designed around a reproducible local pipeline rather than a hosted service. It can run against your own JSONL/CSV interaction data or generate a deterministic synthetic dataset with known coordinated clusters so the complete path can be exercised without external data.
 
 ```text
 ingest interactions
@@ -40,11 +38,11 @@ Each run writes three primary artifacts to the selected output directory:
 
 | File | Purpose |
 |---|---|
-| `ranked_nodes.json` | Suspicious nodes ranked by composite fraud/anomaly score with explanations |
+| `ranked_nodes.json` | Suspicious nodes ranked by composite anomaly score with explanations |
 | `cluster_summary.json` | Per-cluster size, member, score, and noise-cluster summaries |
-| `full_results.json` | Combined machine-readable result bundle with run metadata |
+| `full_results.json` | Machine-readable result bundle with the run configuration and source metadata |
 
-Synthetic runs also print precision, recall, and F1 against the generator's known bot identities. Those metrics apply to the synthetic scenario used for that run; they are not claims about arbitrary real-world datasets.
+Synthetic runs also print precision, recall, and F1 against the generator's known bot identities. Those metrics apply only to the synthetic scenario used for that run; they are not claims about arbitrary real-world datasets.
 
 ---
 
@@ -67,29 +65,23 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### Verify the installation
-
-Run the complete pipeline on a small synthetic dataset:
+### Deterministic smoke run
 
 ```bash
 python main.py \
   --synthetic \
+  --seed 42 \
   --n-normal 60 \
   --n-clusters 2 \
   --n-days 2 \
   --top-n 10 \
+  --save-synthetic output/smoke/input.jsonl \
   --output-dir output/smoke
 ```
 
-Then confirm the expected artifacts exist:
+The exported `input.jsonl` is the exact synthetic event set analyzed in that run. `full_results.json` records the seed and detector configuration so the result can be tied back to the conditions that produced it.
 
-```bash
-test -s output/smoke/ranked_nodes.json
-test -s output/smoke/cluster_summary.json
-test -s output/smoke/full_results.json
-```
-
-That same synthetic end-to-end path is used as the repository CI smoke gate.
+CI runs the same deterministic path and verifies the expected artifacts and run metadata.
 
 ---
 
@@ -99,13 +91,13 @@ That same synthetic end-to-end path is used as the repository CI smoke gate.
 python main.py --input /path/to/events.jsonl
 ```
 
-CSV is also supported by the ingestion layer:
+CSV is also supported:
 
 ```bash
 python main.py --input /path/to/events.csv
 ```
 
-Use a separate output directory when comparing experiments:
+Use separate output directories for separate experiments:
 
 ```bash
 python main.py \
@@ -117,11 +109,10 @@ python main.py \
 
 ## Model controls
 
-The CLI exposes the main sensitivity parameters directly:
-
 ```bash
 python main.py \
   --synthetic \
+  --seed 42 \
   --contamination 0.08 \
   --dbscan-eps 0.40 \
   --dbscan-min-samples 4 \
@@ -130,42 +121,35 @@ python main.py \
 
 | Option | Meaning |
 |---|---|
+| `--seed` | Synthetic generator seed; recorded in run metadata |
 | `--contamination` | Expected anomalous fraction used by Isolation Forest |
 | `--dbscan-eps` | DBSCAN neighborhood radius |
 | `--dbscan-min-samples` | Minimum samples for a dense DBSCAN region |
-| `--flag-threshold` | Composite score threshold used to flag a node |
+| `--flag-threshold` | Composite score threshold used to flag a node and count flagged cluster members |
 | `--top-n` | Number of suspicious nodes retained in ranked output |
 
 Do not tune these values against the answer key of the same dataset and then report the resulting score as an unbiased evaluation. Use held-out or separately generated data when comparing parameter sets.
 
 ---
 
-## Synthetic experiments
+## Synthetic experiment contract
 
-Generate a reusable synthetic interaction file while running the detector:
+The synthetic generator is deterministic for a fixed seed and configuration. For any result you want another person to inspect or reproduce, preserve:
 
-```bash
-python main.py \
-  --synthetic \
-  --n-normal 200 \
-  --n-clusters 5 \
-  --n-days 7 \
-  --save-synthetic data/synthetic.jsonl
-```
+- the `--seed`
+- generator dimensions (`--n-normal`, `--n-clusters`, `--n-days`)
+- detector configuration
+- exact exported input JSONL
+- complete output directory
+- code revision/commit
 
-Replay or analyze saved data separately:
+`--save-synthetic` preserves the same records used by the analysis rather than generating a second dataset for export.
 
-```bash
-python main.py --input data/synthetic.jsonl --output-dir output/replay
-```
-
-The synthetic generator is useful for regression tests, demonstrations, and threshold experiments because the coordinated identities are known in advance.
+The synthetic generator is useful for regression testing and controlled threshold experiments because the coordinated identities are known in advance. It is deliberately not evidence that the same performance will transfer to real social graphs.
 
 ---
 
 ## Architecture
-
-The implementation is split into narrow pipeline stages:
 
 ```text
 main.py
@@ -184,13 +168,13 @@ main.py
 └── config.py
 ```
 
-This separation keeps ingestion, feature engineering, modeling, scoring, and explanation independently inspectable rather than burying the entire decision path in one script.
+This separation keeps ingestion, feature engineering, modeling, scoring, and explanation independently inspectable rather than burying the decision path in one script.
 
 ---
 
 ## Explainability
 
-The detector does not emit only a binary label. Ranked nodes include the strongest feature deviations and cluster context used to explain why a node surfaced. That matters for investigation workflows: anomaly scores should be treated as triage signals that lead back to inspectable evidence, not as attribution by themselves.
+The detector does not emit only a binary label. Ranked nodes include the strongest feature deviations and cluster context used to explain why a node surfaced. Anomaly scores should be treated as triage signals that lead back to inspectable evidence, not as attribution by themselves.
 
 ---
 
