@@ -68,7 +68,7 @@ def parse_args(argv=None) -> argparse.Namespace:
     p.add_argument("--output-dir", default="output",
                    help="Directory for JSON result files (default: ./output).")
     p.add_argument("--save-synthetic", metavar="PATH",
-                   help="If --synthetic, also save generated events to this JSONL path.")
+                   help="If --synthetic, save the exact analyzed synthetic records to this JSONL path.")
 
     return p.parse_args(argv)
 
@@ -112,8 +112,8 @@ def run(args: argparse.Namespace) -> None:
         )
 
         if args.save_synthetic:
-            n = gen.save_jsonl(args.save_synthetic)
-            log.info("saved %d synthetic events → %s", n, args.save_synthetic)
+            n = gen.save_jsonl(args.save_synthetic, events=records)
+            log.info("saved %d analyzed synthetic events → %s", n, args.save_synthetic)
 
         ingestion_layer = DataIngestionLayer()
         df = ingestion_layer.ingest_records(records)
